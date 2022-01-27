@@ -51,16 +51,6 @@
         <woody.thrift.version>1.0.4</woody.thrift.version>
     </properties>
 
-<!--    <dependencyManagement>-->
-<!--        <dependencies>-->
-<!--            <dependency>-->
-<!--                <groupId>org.slf4j</groupId>-->
-<!--                <artifactId>slf4j-api</artifactId>-->
-<!--                <version>1.7.35</version>-->
-<!--            </dependency>-->
-<!--        </dependencies>-->
-<!--    </dependencyManagement>-->
-
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
