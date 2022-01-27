@@ -4,20 +4,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <groupId>com.rbkmoney</groupId>
+        <groupId>dev.vality</groupId>
         <artifactId>library-parent-pom</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.2</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
 
     <artifactId>kafka-common-lib</artifactId>
-    <version>0.1.9</version>
+    <version>0.0.1</version>
 
     <name>Kafka common lib</name>
     <description>Kafka serializers/deserializers</description>
-    <url>https://github.com/rbkmoney/kafka-common-lib</url>
+    <url>https://github.com/valitydev/kafka-common-lib</url>
 
     <licenses>
         <license>
@@ -28,38 +28,38 @@
 
     <developers>
         <developer>
-            <organization>RBK.money</organization>
-            <organizationUrl>https://rbk.money</organizationUrl>
+            <organization>Vality</organization>
+            <organizationUrl>https://vality.dev</organizationUrl>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/rbkmoney/kafka-common-lib.git</connection>
-        <developerConnection>scm:git:ssh://github.com/rbkmoney/kafka-common-lib.git</developerConnection>
-        <url>https://github.com/rbkmoney/kafka-common-lib/tree/master</url>
+        <connection>scm:git:git://github.com/valitydev/kafka-common-lib.git</connection>
+        <developerConnection>scm:git:ssh://github.com/valitydev/kafka-common-lib.git</developerConnection>
+        <url>https://github.com/valitydev/kafka-common-lib/tree/master</url>
     </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>8</java.version>
-        <lombok.version>1.18.20</lombok.version>
-        <kafka.clients.version>2.8.0</kafka.clients.version>
-        <spring-kafka.version>2.7.2</spring-kafka.version>
-        <damsel.version>1.431-2f62a8c</damsel.version>
-        <machinegun-proto.version>1.18-d814d69</machinegun-proto.version>
-        <woody.thrift.version>[1.1.21,)</woody.thrift.version>
+        <lombok.version>1.18.22</lombok.version>
+        <kafka.clients.version>2.8.1</kafka.clients.version>
+        <spring-kafka.version>2.8.2</spring-kafka.version>
+        <damsel.version>1.544-dcd92dd</damsel.version>
+        <machinegun-proto.version>1.21-e4784ab</machinegun-proto.version>
+        <woody.thrift.version>1.0.4</woody.thrift.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.25</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+<!--            <dependency>-->
+<!--                <groupId>org.slf4j</groupId>-->
+<!--                <artifactId>slf4j-api</artifactId>-->
+<!--                <version>1.7.35</version>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
 
     <dependencies>
         <dependency>
@@ -78,21 +78,21 @@
             <version>${kafka.clients.version}</version>
         </dependency>
 
-        <!-- rbk -->
+        <!-- vality -->
         <dependency>
-            <groupId>com.rbkmoney</groupId>
+            <groupId>dev.vality</groupId>
             <artifactId>machinegun-proto</artifactId>
             <version>${machinegun-proto.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney.woody</groupId>
+            <groupId>dev.vality.woody</groupId>
             <artifactId>woody-thrift</artifactId>
             <version>${woody.thrift.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney</groupId>
+            <groupId>dev.vality</groupId>
             <artifactId>damsel</artifactId>
             <version>${damsel.version}</version>
             <scope>provided</scope>
