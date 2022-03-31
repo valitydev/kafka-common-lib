@@ -11,22 +11,18 @@ import org.springframework.util.backoff.BackOff;
 import org.springframework.util.backoff.ExponentialBackOff;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static dev.vality.kafka.common.util.LogUtil.toSummaryString;
 
 @Slf4j
-public class ExponentialBackOffWithSleepDefaultErrorHandler extends DefaultErrorHandler {
+public class ExponentialBackOffDefaultErrorHandler extends DefaultErrorHandler {
 
-    private final long sleepTimeSeconds;
-
-    public ExponentialBackOffWithSleepDefaultErrorHandler() {
-        this(5, new ExponentialBackOff());
+    public ExponentialBackOffDefaultErrorHandler() {
+        this(new ExponentialBackOff());
     }
 
-    public ExponentialBackOffWithSleepDefaultErrorHandler(int sleepTimeSeconds, BackOff backOff) {
+    public ExponentialBackOffDefaultErrorHandler(BackOff backOff) {
         super(backOff);
-        this.sleepTimeSeconds = sleepTimeSeconds;
     }
 
     @Override
@@ -43,7 +39,6 @@ public class ExponentialBackOffWithSleepDefaultErrorHandler extends DefaultError
         log.error(
                 String.format("Records commit failed, size=%d, %s", records.size(), LogUtil.toString(records)),
                 thrownException);
-        sleepBeforeRetry();
         super.handleRemaining(thrownException, records, consumer, container);
     }
 
@@ -57,15 +52,6 @@ public class ExponentialBackOffWithSleepDefaultErrorHandler extends DefaultError
         log.error(
                 String.format("Records commit failed, size=%d, %s", data.count(), toSummaryString(data)),
                 thrownException);
-        sleepBeforeRetry();
         super.handleBatch(thrownException, data, consumer, container, invokeListener);
-    }
-
-    private void sleepBeforeRetry() {
-        try {
-            Thread.sleep(TimeUnit.SECONDS.toMillis(this.sleepTimeSeconds));
-        } catch (InterruptedException var2) {
-            Thread.currentThread().interrupt();
-        }
     }
 }
