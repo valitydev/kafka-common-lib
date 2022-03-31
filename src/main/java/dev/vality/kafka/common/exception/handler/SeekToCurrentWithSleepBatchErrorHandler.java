@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.kafka.listener.MessageListenerContainer;
 import org.springframework.kafka.listener.SeekToCurrentBatchErrorHandler;
 
@@ -12,7 +13,11 @@ import java.util.concurrent.TimeUnit;
 
 import static dev.vality.kafka.common.util.LogUtil.toSummaryString;
 
+/**
+ * @deprecated in favor of {@link DefaultErrorHandler} or {@link ExponentialBackOffDefaultErrorHandler}.
+ */
 @Slf4j
+@Deprecated
 public class SeekToCurrentWithSleepBatchErrorHandler extends SeekToCurrentBatchErrorHandler {
 
     @Setter
