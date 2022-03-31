@@ -7,6 +7,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.kafka.listener.MessageListenerContainer;
+import org.springframework.util.backoff.BackOff;
 import org.springframework.util.backoff.ExponentialBackOff;
 
 import java.util.List;
@@ -20,11 +21,11 @@ public class ExponentialBackOffWithSleepDefaultErrorHandler extends DefaultError
     private final long sleepTimeSeconds;
 
     public ExponentialBackOffWithSleepDefaultErrorHandler() {
-        this(5);
+        this(5, new ExponentialBackOff());
     }
 
-    public ExponentialBackOffWithSleepDefaultErrorHandler(int sleepTimeSeconds) {
-        super(new ExponentialBackOff());
+    public ExponentialBackOffWithSleepDefaultErrorHandler(int sleepTimeSeconds, BackOff backOff) {
+        super(backOff);
         this.sleepTimeSeconds = sleepTimeSeconds;
     }
 
