@@ -3,6 +3,8 @@ package dev.vality.kafka.common.exception.handler;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.springframework.kafka.listener.CommonErrorHandler;
+import org.springframework.kafka.listener.DefaultErrorHandler;
 import org.springframework.kafka.listener.MessageListenerContainer;
 import org.springframework.kafka.listener.SeekToCurrentErrorHandler;
 import org.springframework.util.backoff.FixedBackOff;
@@ -12,7 +14,12 @@ import java.util.concurrent.TimeUnit;
 
 import static org.springframework.util.backoff.FixedBackOff.UNLIMITED_ATTEMPTS;
 
+/**
+ * @deprecated in favor of {@link CommonErrorHandler} or {@link DefaultErrorHandler}
+    or {@link ExponentialBackOffDefaultErrorHandler}.
+ */
 @Slf4j
+@Deprecated
 public class SeekToCurrentWithSleepErrorHandler extends SeekToCurrentErrorHandler {
 
     private final Integer sleepTimeSeconds;

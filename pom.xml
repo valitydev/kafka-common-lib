@@ -13,7 +13,7 @@
     <packaging>jar</packaging>
 
     <artifactId>kafka-common-lib</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
 
     <name>Kafka common lib</name>
     <description>Kafka serializers/deserializers</description>
