@@ -16,7 +16,7 @@ import static org.springframework.util.backoff.FixedBackOff.UNLIMITED_ATTEMPTS;
 
 /**
  * @deprecated in favor of {@link CommonErrorHandler} or {@link DefaultErrorHandler}
-or {@link ExponentialBackOffDefaultErrorHandler}.
+    or {@link ExponentialBackOffDefaultErrorHandler}.
  */
 @Slf4j
 @Deprecated

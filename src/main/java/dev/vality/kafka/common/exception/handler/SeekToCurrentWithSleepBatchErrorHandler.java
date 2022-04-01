@@ -16,7 +16,7 @@ import static dev.vality.kafka.common.util.LogUtil.toSummaryString;
 
 /**
  * @deprecated in favor of {@link CommonErrorHandler} or {@link DefaultErrorHandler}
-or {@link ExponentialBackOffDefaultErrorHandler}.
+    or {@link ExponentialBackOffDefaultErrorHandler}.
  */
 @Slf4j
 @Deprecated
