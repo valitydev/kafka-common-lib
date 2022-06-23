@@ -43,12 +43,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>8</java.version>
-        <lombok.version>1.18.22</lombok.version>
-        <slf4j.version>1.7.35</slf4j.version>
-        <kafka.clients.version>3.1.0</kafka.clients.version>
-        <spring-kafka.version>2.8.2</spring-kafka.version>
-        <damsel.version>1.544-dcd92dd</damsel.version>
-        <machinegun-proto.version>1.21-e4784ab</machinegun-proto.version>
+        <lombok.version>1.18.24</lombok.version>
+        <slf4j.version>1.7.36</slf4j.version>
+        <kafka.clients.version>3.2.0</kafka.clients.version>
+        <spring-kafka.version>2.8.7</spring-kafka.version>
+        <damsel.version>1.564-dac2cb5</damsel.version>
+        <machinegun-proto.version>1.38-347c5c4</machinegun-proto.version>
         <woody.thrift.version>1.0.4</woody.thrift.version>
     </properties>
 
@@ -99,7 +99,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
