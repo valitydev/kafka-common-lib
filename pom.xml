@@ -13,7 +13,7 @@
     <packaging>jar</packaging>
 
     <artifactId>kafka-common-lib</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 
     <name>Kafka common lib</name>
     <description>Kafka serializers/deserializers</description>
@@ -46,7 +46,7 @@
         <lombok.version>1.18.22</lombok.version>
         <slf4j.version>1.7.35</slf4j.version>
         <kafka.clients.version>3.1.0</kafka.clients.version>
-        <spring-kafka.version>2.8.2</spring-kafka.version>
+        <spring-kafka.version>3.0.10</spring-kafka.version>
         <damsel.version>1.544-dcd92dd</damsel.version>
         <machinegun-proto.version>1.21-e4784ab</machinegun-proto.version>
         <woody.thrift.version>1.0.4</woody.thrift.version>
